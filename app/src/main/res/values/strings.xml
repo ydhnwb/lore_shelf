@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Shelflore</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_bookshelf">Bookshelf</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_n_library">Library</string>
+    <string name="title_n_explore">Explore</string>
+    <string name="title_n_profile">Profile</string>
+    <string name="more">See more</string>
+    <string name="title_your">Your</string>
+    <string name="no_data">Nothing is here</string>
+    <string name="search_anything">Search anything</string>
+</resources>
