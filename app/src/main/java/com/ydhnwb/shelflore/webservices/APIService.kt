@@ -8,5 +8,5 @@ import retrofit2.http.Query
 
 interface APIService {
     @GET("volumes")
-    fun search(@Query("q") q : String, @Query("key") key : String) : Call<SearchConverter>
+    fun search(@Query("q") q : String, @Query("key") key : String, @Query("maxResults") results : Int) : Call<SearchConverter>
 }

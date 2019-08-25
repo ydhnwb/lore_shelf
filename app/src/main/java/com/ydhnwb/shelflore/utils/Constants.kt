@@ -1,5 +1,6 @@
 package com.ydhnwb.shelflore.utils
 
+import com.ydhnwb.shelflore.models.ImageLink
 import com.ydhnwb.shelflore.webservices.APIService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -10,6 +11,16 @@ class Constants {
     companion object {
         const val TOKEN_BOOKS = "AIzaSyBxh4Q26dGTt6cUoKY9L1FaGQq0qHxBQuk"
         const val API_ENDPOINT = "https://www.googleapis.com/books/v1/"
+
+        fun getBetterThumb(url : String) : String{
+            if(url.equals(ImageLink().thumbnail)){
+                return url
+            }
+            val s = url.indexOf("zoom=")
+            val c = url.substring(s, s+6)
+            val sx = url.replace(c, "zoom=3")
+            return sx
+        }
     }
 }
 

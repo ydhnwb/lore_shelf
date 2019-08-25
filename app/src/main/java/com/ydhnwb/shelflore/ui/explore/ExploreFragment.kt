@@ -30,9 +30,10 @@ class ExploreFragment : Fragment(), ExploreContract.ExploreView {
             override fun onButtonClicked(buttonCode: Int) {}
             override fun onSearchStateChanged(enabled: Boolean) {}
             override fun onSearchConfirmed(text: CharSequence?) {
-                text?.isNotEmpty().let {
-                    view.etc_hint.visibility = View.GONE
-                    presenter?.search(text.toString().trim())
+                text?.isNotEmpty().let {b ->
+                    if(b == true)
+                        view.etc_hint.visibility = View.GONE
+                        presenter?.search(text.toString().trim())
                 }
             }
         })
