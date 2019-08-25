@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.transition.Fade
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ydhnwb.shelflore.ui.explore.ExploreFragment
 import com.ydhnwb.shelflore.ui.library.LibraryFragment

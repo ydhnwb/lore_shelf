@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import coil.api.load
 import com.google.android.material.appbar.AppBarLayout
 import com.ydhnwb.shelflore.models.VolumeInfo
+import com.ydhnwb.shelflore.ui.detail.VpPagerAdapter
 import com.ydhnwb.shelflore.utils.Constants
 import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.content_detail.*
 
 class DetailActivity : AppCompatActivity() {
 
@@ -22,7 +24,6 @@ class DetailActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
         init()
-        fill()
     }
 
     private fun init(){
@@ -39,13 +40,12 @@ class DetailActivity : AppCompatActivity() {
                 scrollRange + verticalOffset > 0 -> toolbar_layout.title = " "
             }
         })
-    }
 
-    private fun fill(){
-        book_image.load(Constants.getBetterThumb(getVolume().imageLink.thumbnail))
-        book_background.load(Constants.getBetterThumb(getVolume().imageLink.thumbnail))
-        book_rating.rating = getVolume().averageRating
-        book_title.text = getVolume().title
+        detail_backround.load(Constants.getBetterThumb(getVolume().imageLink.thumbnail)){
+            crossfade(true)
+            crossfade(1500)
+        }
+        detail_vp.adapter = VpPagerAdapter(supportFragmentManager, getVolume())
     }
 
     private fun getVolume() : VolumeInfo = intent.getParcelableExtra("VOLUME")

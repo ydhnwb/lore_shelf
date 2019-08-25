@@ -15,6 +15,7 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:transitionName="image_transition"
             android:scaleType="centerCrop"
             android:src="@color/colorAccent"
             android:id="@+id/item_book_image"
